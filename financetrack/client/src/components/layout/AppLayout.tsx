@@ -5,18 +5,22 @@ import Header from '../Header'
 type AppLayoutProps = {
   activePage: string
   onNavigate: (page: string) => void
+  userName: string
   children: ReactNode
 }
 
 function AppLayout({
   activePage,
   onNavigate,
+  userName,
   children,
 }: AppLayoutProps) {
   const pageTitle =
     activePage === 'dashboard'
       ? 'Dashboard'
-      : 'Transactions'
+      : activePage === 'analytics'
+        ? 'Analytics'
+        : activePage === 'settings' ? 'Settings' : 'Transactions'
 
   return (
     <div className="app-layout">
@@ -26,7 +30,7 @@ function AppLayout({
       />
 
       <div className="app-main">
-        <Header title={pageTitle} />
+        <Header title={pageTitle} userName={userName} onProfile={() => onNavigate('settings')} />
 
         <main className="app-content">
           {children}

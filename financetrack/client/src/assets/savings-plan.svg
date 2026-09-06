@@ -1,0 +1,15 @@
+<svg width="560" height="380" viewBox="0 0 560 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="380" rx="24" fill="#E9F0FA"/>
+  <circle cx="436" cy="84" r="52" fill="#F04444" fill-opacity=".9"/>
+  <path d="M105 290C139 238 193 205 254 205C315 205 353 237 423 164" stroke="#0A1F3D" stroke-width="6" stroke-linecap="round"/>
+  <path d="M400 162L425 160L420 185" stroke="#2F80ED" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="98" y="111" width="218" height="152" rx="14" fill="white"/>
+  <text x="122" y="145" fill="#718096" font-family="Arial" font-size="13">SAVINGS GOAL</text>
+  <text x="122" y="177" fill="#06152D" font-family="Arial" font-size="25" font-weight="700">New home</text>
+  <rect x="122" y="201" width="170" height="9" rx="4.5" fill="#E6E8EC"/>
+  <rect x="122" y="201" width="116" height="9" rx="4.5" fill="#2F80ED"/>
+  <text x="122" y="239" fill="#159570" font-family="Arial" font-size="12">68% complete</text>
+  <path d="M375 279C395 244 443 230 477 248C508 265 515 306 484 323C444 345 386 325 375 279Z" fill="#0A1F3D"/>
+  <path d="M412 273C428 259 452 258 468 270C483 282 477 305 456 311C432 318 409 301 412 273Z" fill="#F7F4EE"/>
+  <path d="M431 289C431 278 448 277 451 288C454 299 437 303 431 289Z" fill="#2F80ED"/>
+</svg>

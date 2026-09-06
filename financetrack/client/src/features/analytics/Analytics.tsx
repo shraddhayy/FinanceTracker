@@ -1,0 +1,13 @@
+import type { Transaction } from '../../types/transaction'
+
+type Props = { transactions: Transaction[] }
+const money = (amount: number) => `₹${amount.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`
+
+export default function Analytics({ transactions }: Props) {
+  const expenses = transactions.filter((item) => item.type === 'expense')
+  const total = expenses.reduce((sum, item) => sum + Number(item.amount), 0)
+  const groups = Object.entries(expenses.reduce<Record<string, number>>((all, item) => ({ ...all, [item.category]: (all[item.category] || 0) + Number(item.amount) }), {})).sort((a, b) => b[1] - a[1])
+  const months = Object.entries(transactions.reduce<Record<string, { income: number; expense: number }>>((all, item) => { const key = item.date.slice(0, 7); const value = all[key] || { income: 0, expense: 0 }; value[item.type] += Number(item.amount); all[key] = value; return all }, {})).sort(([a], [b]) => a.localeCompare(b)).slice(-6)
+  const maxMonth = Math.max(1, ...months.flatMap(([, value]) => [value.income, value.expense]))
+  return <section><div className="page-intro"><p className="eyebrow">ANALYTICS</p><h3>Spending, in context</h3><p>Clear patterns from your recorded transactions.</p></div><div className="analytics-grid"><section className="analytics-card"><div className="section-heading"><div><h2>Where your money goes</h2><p>Expense categories</p></div><strong>{money(total)}</strong></div>{groups.length ? groups.map(([name, amount]) => <div className="category-bar" key={name}><div><span>{name}</span><strong>{money(amount)}</strong></div><i><b style={{ width: `${Math.max(4, (amount / total) * 100)}%` }} /></i><small>{Math.round((amount / total) * 100)}% of expenses</small></div>) : <p className="page-description">Add expenses to see a category breakdown.</p>}</section><section className="analytics-card"><div className="section-heading"><div><h2>Monthly flow</h2><p>Income compared with expenses</p></div></div>{months.length ? <div className="month-chart">{months.map(([month, value]) => <div key={month} className="month-column"><div className="month-bars"><i className="income-bar" style={{ height: `${(value.income / maxMonth) * 150}px` }} title={`Income ${money(value.income)}`} /><i className="expense-bar" style={{ height: `${(value.expense / maxMonth) * 150}px` }} title={`Expenses ${money(value.expense)}`} /></div><small>{new Intl.DateTimeFormat('en-IN', { month: 'short' }).format(new Date(`${month}-01T00:00:00`))}</small></div>)}</div> : <p className="page-description">Monthly comparisons appear after you add transactions.</p>}<div className="chart-key"><span><i className="income-key" />Income</span><span><i className="expense-key" />Expenses</span></div></section></div></section>
+}

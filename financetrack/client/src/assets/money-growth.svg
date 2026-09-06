@@ -1,0 +1,17 @@
+<svg width="640" height="430" viewBox="0 0 640 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="430" rx="28" fill="#0A1F3D"/>
+  <path d="M50 344C156 324 187 276 260 287C334 298 350 244 415 238C486 232 493 161 590 79" stroke="#2F80ED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M559 82L592 78L585 111" stroke="#55A1FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="174" cy="285" r="48" fill="#F04444" fill-opacity=".95"/>
+  <circle cx="174" cy="285" r="28" fill="#FF7777" fill-opacity=".45"/>
+  <path d="M112 366L216 324L272 350L205 391L112 366Z" fill="#EAF3FF"/>
+  <path d="M216 324L254 302L308 328L272 350L216 324Z" fill="#BBD9FF"/>
+  <path d="M205 391L272 350L308 328L239 369L205 391Z" fill="#8ABCF7"/>
+  <rect x="344" y="74" width="176" height="122" rx="16" fill="#F7F4EE" transform="rotate(8 344 74)"/>
+  <text x="372" y="119" fill="#718096" font-family="Arial" font-size="14" transform="rotate(8 372 119)">TOTAL BALANCE</text>
+  <text x="369" y="151" fill="#06152D" font-family="Arial" font-size="28" font-weight="700" transform="rotate(8 369 151)">₹85,420</text>
+  <text x="372" y="174" fill="#159570" font-family="Arial" font-size="12" transform="rotate(8 372 174)">↗ 12% this month</text>
+  <circle cx="522" cy="304" r="70" fill="#123E78"/>
+  <path d="M488 312L510 286L530 299L561 260" stroke="#55A1FF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M546 262H561V277" stroke="#55A1FF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
